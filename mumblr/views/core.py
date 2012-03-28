@@ -4,7 +4,7 @@ from django.template import RequestContext
 from django.core.urlresolvers import reverse
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.conf import settings
-from django.contrib.syndication.feeds import Feed
+from django.contrib.syndication.views import Feed
 from django.utils.feedgenerator import Atom1Feed
 from django.utils.functional import lazy
 
@@ -22,6 +22,7 @@ NO_ENTRIES_MESSAGES = (
 
 def _lookup_template(name):
     theme = getattr(settings, 'MUMBLR_THEME', 'default')
+    print "LOOKUP TEMPLATE!!!!!", theme, name, 'mumblr/themes/%s/%s.html' % (theme, name)
     return 'mumblr/themes/%s/%s.html' % (theme, name)
 
 def archive(request, entry_type=None, page_number=1):

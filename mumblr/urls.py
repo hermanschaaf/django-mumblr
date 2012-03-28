@@ -32,6 +32,6 @@ urlpatterns = patterns('',
     url('^admin/login/$', login, {'template_name': 'mumblr/admin/login.html'}, 
         name='log-in'),
     url('^admin/logout/$', logout, {'next_page': '/'}, name='log-out'),
-    url('^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.feed',
+    url('^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.Feed',
         {'feed_dict': feeds}, name='feeds'),
 )
