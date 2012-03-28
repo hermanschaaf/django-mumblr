@@ -2,3 +2,8 @@
 *.pyc
 .*.swp
 example/mongoengine
+build
+mumblr/bin
+mumblr/lib
+mumblr/local
+mumblr/include
